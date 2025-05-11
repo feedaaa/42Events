@@ -9,7 +9,7 @@ export function Footer() {
           {/* Logo and description */}
           <div className="space-y-4">
             <div className="footer-logo">
-              <span className="text-white">&lt;university events/&gt;</span>
+              <span className="text-white">&lt;42Events/&gt;</span>
             </div>
             <p className="text-white/80 max-w-md">
               Discover, attend, and organize events at our university. Stay connected with the campus community.

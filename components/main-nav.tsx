@@ -26,7 +26,7 @@ export function MainNav() {
         <Link href="/" className="flex items-center space-x-2">
           <span className="pixel-font text-2xl font-bold">
             <span className="text-primary">&lt;</span>
-            <span className="text-white">university events</span>
+            <span className="text-white">42Events</span>
             <span className="text-primary">/&gt;</span>
           </span>
         </Link>
