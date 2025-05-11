@@ -1,0 +1,423 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "VG5000";
+  src: url("/fonts/VG5000-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 20%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 180 96% 49%;
+    --secondary-foreground: 0 0% 15%;
+
+    --accent: 12 99% 62%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 267 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 20%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 180 96% 49%;
+    --secondary-foreground: 0 0% 15%;
+
+    --accent: 12 99% 62%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 267 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Futura PT", system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .pixel-font {
+    font-family: "VG5000", monospace;
+  }
+}
+
+/* Animated background */
+.animated-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, transparent 99%, #730fff 99.5%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, transparent 97%, #05f2f2 97.5%, transparent 98%),
+    linear-gradient(90deg, transparent 0%, transparent 94%, #fe593d 94.5%, transparent 95%);
+  background-size: 200% 100%, 300% 100%, 400% 100%;
+  animation: bgScroll 15s linear infinite;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+@keyframes bgScroll {
+  0% {
+    background-position: 100% 0%, 0% 0%, 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 0% 0%;
+  }
+}
+
+/* Pixel art elements */
+.pixel-border {
+  position: relative;
+  border: 2px solid #730fff;
+}
+
+.pixel-border::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #730fff;
+}
+
+.pixel-border::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #730fff;
+}
+
+/* Pixel art button */
+.pixel-button {
+  position: relative;
+  background-color: #730fff;
+  color: white;
+  font-family: "VG5000", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixel-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.pixel-button:hover {
+  background-color: #8b44ff;
+  transform: translateY(-2px);
+}
+
+.pixel-button.text-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Pixel art card */
+.pixel-card {
+  background-color: #323232;
+  border: 2px solid #730fff;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pixel-card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #05f2f2;
+}
+
+.pixel-card::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #fe593d;
+}
+
+.pixel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(115, 15, 255, 0.2);
+}
+
+/* Digital lines */
+.digital-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.digital-lines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, transparent 0%, transparent 99%, #730fff 99.5%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, transparent 97%, #05f2f2 97.5%, transparent 98%),
+    linear-gradient(90deg, transparent 0%, transparent 94%, #fe593d 94.5%, transparent 95%);
+  background-size: 100% 20px, 100% 30px, 100% 40px;
+  background-repeat: repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Modal styles */
+.event-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.event-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.event-modal-content {
+  background-color: #323232;
+  border: 2px solid #730fff;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.event-modal.open .event-modal-content {
+  transform: translateY(0);
+}
+
+.event-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Pixel art icon */
+.pixel-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #fe593d;
+  position: relative;
+}
+
+.pixel-icon::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #323232;
+}
+
+.pixel-icon::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background-color: #fe593d;
+}
+
+/* Scrolling lines animation */
+.scrolling-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.scrolling-line {
+  position: absolute;
+  height: 1px;
+  background-color: #730fff;
+  opacity: 0.2;
+  animation: scrollLine 10s linear infinite;
+}
+
+.scrolling-line:nth-child(2n) {
+  background-color: #05f2f2;
+}
+
+.scrolling-line:nth-child(3n) {
+  background-color: #fe593d;
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-color: #730fff;
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    45deg,
+    #730fff 25%,
+    transparent 25%,
+    transparent 50%,
+    #730fff 50%,
+    #730fff 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  opacity: 0.2;
+}
+
+.footer-logo {
+  font-family: "VG5000", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
