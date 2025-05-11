@@ -77,7 +77,7 @@ export function AdminSidebar() {
               variant={route.active ? "secondary" : "ghost"}
               className={cn(
                 "w-full justify-start",
-                route.active ? "bg-secondary text-white" : "hover:bg-muted hover:text-primary",
+                route.active ? "bg-secondary text-white" : "hover:bg-muted hover:text-white",
               )}
               asChild
             >
@@ -90,7 +90,7 @@ export function AdminSidebar() {
         </div>
       </ScrollArea>
       <div className="mt-auto p-4 border-t border-primary/20">
-        <Link href="/" className="text-sm text-muted-foreground hover:text-primary block py-2">
+        <Link href="/" className="text-sm text-muted-foreground hover:text-white block py-2">
           ← Back to Website
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { SearchEvents } from "@/components/search-events"
-
+import Link from "next/link"
 export function HeroSection() {
   return (
     <div className="relative py-16 md:py-24 overflow-hidden">
@@ -27,8 +27,10 @@ export function HeroSection() {
           <div className="absolute -right-4 -bottom-4 w-3 h-3 bg-primary"></div>
           <SearchEvents />
         </div>
-
-        <div className="pixel-button inline-block">Browse All Events</div>
+        
+        <Link href="/events/">
+          <div className="pixel-button inline-block">Browse All Events</div>
+        </Link>
       </div>
     </div>
   )
