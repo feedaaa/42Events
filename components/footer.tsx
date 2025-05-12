@@ -23,16 +23,16 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold mb-4">STAY CONNECTED</h3>
             <div className="footer-social">
-              <Link href="#" aria-label="Facebook">
+              <Link href="#https://www.facebook.com/42abudhabi/" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="#" aria-label="Twitter">
+              <Link href="#https://x.com/42AbuDhabi" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link href="#https://www.instagram.com/42abudhabi/" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" aria-label="LinkedIn">
+              <Link href="#https://www.linkedin.com/school/42abudhabi/" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link href="#" aria-label="YouTube">
