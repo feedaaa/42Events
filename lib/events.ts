@@ -105,7 +105,7 @@ const eventsData = [
     featured: false,
     published: true,
     hasMap: false,
-    image: "/cultural.jpg?height=600&width=1200",
+    image: "/cultural.png?height=600&width=1200",
   },
 ]
 
