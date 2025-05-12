@@ -97,7 +97,7 @@ export default function LoginPage() {
               <Input
                 id="email"
                 type="email"
-                placeholder="admin@university.edu"
+                placeholder="admin@42events.edu"
                 {...register("email")}
                 className="bg-background border-muted"
               />

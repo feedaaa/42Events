@@ -1,6 +1,6 @@
 {
-  "name": "University Event Management",
-  "short_name": "Uni Events",
+  "name": "42 Event Management",
+  "short_name": "42 Events",
   "description": "Discover and manage university events",
   "start_url": "/",
   "display": "standalone",

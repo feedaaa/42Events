@@ -6,9 +6,8 @@ import { Footer } from "@/components/footer"
 import "./globals.css"
 
 export const metadata = {
-  title: "University Event Management",
-  description: "A comprehensive event management system for university events",
-    generator: 'v0.dev'
+  title: "42 event management",
+  description: "A comprehensive event management system for 42 events",
 }
 
 export default function RootLayout({
@@ -22,7 +21,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css" crossOrigin="anonymous" />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen flex-col">
             <MainNav />
             <main className="flex-1">{children}</main>
